@@ -271,6 +271,7 @@
     align-self: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    row-gap: 10px;
 }
 
 .seat-column1, .seat-column2 {
