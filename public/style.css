@@ -211,8 +211,11 @@
     text-decoration: underline;
 }
 
+
+/* =========================== dashboard page ============================== */
 .dash-container {
-    background-color: rgb(7, 7, 65);
+    color:#162938;
+    background-color: rgb(231, 234, 238);
     width: 95vw;
     height:100vh;
     display: flex;
@@ -223,18 +226,104 @@
     right:0px;
 }
 
+.greetRev-container{
+    display: flex;
+    position: relative;
+    margin-top: 2vw;
+    justify-content: space-evenly;
+    animation-name: dashgreet;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes dashgreet{
+    0% {left:-95vw;}
+    100%{left: 0vw;}
+}
+
+
+.greetings{
+    background-color: rgb(154, 191, 247);
+    border:2px solid rgb(54, 130, 245);
+    border-radius:20px;
+    width:30vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+}
+
+#user-revenue, #all-revenue {
+    background-color: rgb(154, 191, 247);
+    border:2px solid rgb(54, 130, 245);
+    border-radius:20px;
+    width:30vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+}
+
+.chart-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.announcement-container{
+    margin: 2vh 2vw;
+    background-color: rgb(154, 191, 247);
+    border:2px solid rgb(54, 130, 245);
+    border-radius:20px;
+    overflow: hidden;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+}
+
+#new-announcement {
+    color: rgb(54, 130, 245);
+    display: inline-flex;
+    width:60vw;
+    position:relative;
+    right: 0px;
+}
+
+.movieChart {
+    border: 2px solid rgb(54, 130, 245);
+    border-radius: 20px;
+    padding:10px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+/* =================== movie information page ===================== */
+
 .movie-container {
-    background-color:rgb(7, 7, 65);
+    background-color:rgb(231, 234, 238);
     width: 95vw;
     height:100vh;
     display:flex;
     justify-content: space-evenly;
     position: fixed;
+    flex-wrap: wrap;
     right:0px
 }
 
+
 .reserve-container {
-    background-color: rgb(7, 7, 65);
+    background-color: rgb(231, 234, 238);
     width: 95vw;
     height:100vh;
     display:flex;
@@ -243,15 +332,46 @@
     right:0px
 }
 
+.selectMovie-container{
+    background-color: rgb(231, 234, 238);
+    width: 95vw;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    position: fixed;
+    right:0px
+}
+
+.select-wrapper{
+    width:300px;
+    height:200px;
+    border: 2px solid rgb(54, 130, 245);
+    border-radius: 20px;
+    position: fixed;
+    top:30%;
+    left:40%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:rgb(54, 130, 245);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
 #screen{
-    border: 2px solid white;
+    border: 2px solid rgb(54, 130, 245);
+    margin-top: 10vh;
     border-radius: 10px;
     width:50vw;
     height:10vh;
     text-align: center;
     position:relative;
     align-self: center;
-    color: white;
+    color: rgb(54, 130, 245);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -280,9 +400,9 @@
 }
 
 .seat {
-    border: 2px solid white;
+    border: 2px solid rgb(54, 130, 245);
     border-radius: 5px;
-    color: white;
+    color: rgb(54, 130, 245);
     width:3vw;
     height: 5vh;
     text-align: center;
@@ -295,4 +415,8 @@
 .seat:hover {
     background-color: blue;
     cursor: pointer;
+}
+
+#seat-input {
+    color: rgb(54, 130, 245);
 }
