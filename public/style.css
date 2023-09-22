@@ -26,7 +26,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-border-radius: 20px;
+    flex-direction: column;
+    /* -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
@@ -34,20 +35,21 @@
     transition: height .2s ease;
     -webkit-transition: height .2s ease;
     -moz-transition: height .2s ease;
-    -ms-transition: height .2s ease;
-    -o-transition: height .2s ease;
+    -ms-transition: height .2s ease; */
+    /* -o-transition: height .2s ease; */
 }
 
-.wrapper.active{
+
+/* .wrapper.active{
     height:520px;
-}
-
+} */
+/* 
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
-}
+} */
 
-.wrapper .form-box.login {
+/* .wrapper .form-box.login {
     transition:transform .18s ease;
     transform: translateX(0);
     -webkit-transition:transform .18s ease;
@@ -71,11 +73,11 @@
     -moz-transform: translateX(-400px);
     -ms-transform: translateX(-400px);
     -o-transform: translateX(-400px);
-}
+} */
 
 
 
-.wrapper .form-box.register{
+/* .wrapper .form-box.register{
     position: absolute;
     transition: none;
     transform: translateX(400px);
@@ -100,7 +102,7 @@
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
-}
+} */
 
 .form-box h2{
     font-size: 2em;
@@ -126,6 +128,14 @@
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 
 .input-box input:focus~label, 
@@ -322,44 +332,25 @@
 }
 
 
+/* =================== reserve seat page ===================== */
+
 .reserve-container {
     background-color: rgb(231, 234, 238);
     width: 95vw;
     height:100vh;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     position: fixed;
     right:0px
 }
 
-.selectMovie-container{
-    background-color: rgb(231, 234, 238);
-    width: 95vw;
-    height:100vh;
-    display:flex;
-    flex-direction: column;
-    position: fixed;
-    right:0px
-}
-
-.select-wrapper{
-    width:300px;
-    height:200px;
-    border: 2px solid rgb(54, 130, 245);
-    border-radius: 20px;
-    position: fixed;
-    top:30%;
-    left:40%;
-    align-self: center;
+.timeslot-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color:rgb(54, 130, 245);
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    justify-content: space-around;
+    row-gap: 5px;
+    flex-wrap: wrap;
 }
 
 #screen{

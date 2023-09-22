@@ -61,24 +61,24 @@ router.get('/movieInfo', async(req,res)=>{
 if(req.session.user){
         try{
             const cinema1 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt26533869&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             });
             const cinema2 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt13086266&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
             const cinema3 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt10160976&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
             const cinema4 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt22687790&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
-            res.render('movieViews', {title: 'Select Movie', c1Title:cinema1.data.title.title, c2Title:cinema2.data.title.title, c3Title:cinema3.data.title.title, c4Title:cinema4.data.title.title})
+            res.render('movieInfoViews', {title: 'Movie Info', c1Title:cinema1.data.title.title, c1Genre:cinema1.data.genres, c1Rating:cinema1.data.ratings.rating, c1Plot:cinema1.data.plotOutline.text, c1Image:cinema1.data.title.image.url,c2Title:cinema2.data.title.title, c2Genre:cinema2.data.genres, c2Rating:cinema2.data.ratings.rating, c2Plot:cinema2.data.plotOutline.text, c2Image:cinema2.data.title.image.url,c3Title:cinema3.data.title.title, c3Genre:cinema3.data.genres, c3Rating:cinema3.data.ratings.rating, c3Plot:cinema3.data.plotOutline.text, c3Image:cinema3.data.title.image.url,c4Title:cinema4.data.title.title, c4Genre:cinema4.data.genres, c4Rating:cinema4.data.ratings.rating, c4Plot:cinema4.data.plotOutline.text, c4Image:cinema4.data.title.image.url})
         } catch (error) {
             console.error(error);
             res.status(500).send('Error');
@@ -88,94 +88,29 @@ if(req.session.user){
     }
 })
 
-router.get('/movieSummary1', (req,res)=>{
-    if(req.session.user){
-            axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt26533869&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
-                'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
-            })
-                .then(response => {
-                    res.render('movieInfoViews', {title: response.data.title.title,  cTitle:response.data.title.title, cGenre:response.data.genres, cRating:response.data.ratings.rating, cPlot:response.data.plotOutline.text, cImage:response.data.title.image.url})
-                    // console.log(response.data)
-                })
-                .catch(error =>{
-                    console.log(error)
-                })
-        }
-    }
-)
-
-router.get('/movieSummary2', (req,res)=>{
-    if(req.session.user){
-            axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt13086266&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
-                'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
-            })
-                .then(response => {
-                    res.render('movieInfoViews', {title: response.data.title.title,  cTitle:response.data.title.title, cGenre:response.data.genres, cRating:response.data.ratings.rating, cPlot:response.data.plotOutline.text, cImage:response.data.title.image.url})
-                })
-                .catch(error =>{
-                    console.log(error)
-                })
-        }
-    }
-)
-
-router.get('/movieSummary3', (req,res)=>{
-    if(req.session.user){
-            axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt10160976&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
-                'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
-            })
-                .then(response => {
-                    res.render('movieInfoViews', {title: response.data.title.title,  cTitle:response.data.title.title, cGenre:response.data.genres, cRating:response.data.ratings.rating, cPlot:response.data.plotOutline.text, cImage:response.data.title.image.url})
-                })
-                .catch(error =>{
-                    console.log(error)
-                })
-        }
-    }
-)
-
-router.get('/movieSummary4', (req,res)=>{
-    if(req.session.user){
-            axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt22687790&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
-                'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
-            })
-                .then(response => {
-                    res.render('movieInfoViews', {title: response.data.title.title,  cTitle:response.data.title.title, cGenre:response.data.genres, cRating:response.data.ratings.rating, cPlot:response.data.plotOutline.text, cImage:response.data.title.image.url})
-                    // console.log(response.data.ratings.rating)
-                })
-                .catch(error =>{
-                    console.log(error)
-                })
-        }
-    }
-)
 
 router.get("/reserve", async (req, res)=>{
     if(req.session.user){
         try{
             const cinema1 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt26533869&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             });
             const cinema2 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt13086266&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
             const cinema3 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt10160976&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
             const cinema4 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt22687790&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '9785db78edmshe01f19b9b2eac9fp16546djsn33fa3dc81372',
+                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
-            res.render('selectMovieViews', {title: 'Select Movie', c1Title:cinema1.data.title.title, c2Title:cinema2.data.title.title, c3Title:cinema3.data.title.title, c4Title:cinema4.data.title.title})
+            res.render('selectMovieViews', {title: 'Select Movie', c1Title:cinema1.data.title.title, c2Title:cinema2.data.title.title, c3Title:cinema3.data.title.title, c4Title:cinema4.data.title.title, c1Image:cinema1.data.title.image.url, c2Image:cinema2.data.title.image.url, c3Image:cinema3.data.title.image.url, c4Image:cinema4.data.title.image.url})
         } catch (error) {
             console.error(error);
             res.status(500).send('Error');
@@ -223,7 +158,7 @@ router.get("/logout", (req, res)=>{
             console.log(err);
             res.send(err);
         }else{
-            res.redirect('/login');
+            res.render('loginViews', {title: 'Login', dataError:'logged out successfully!'});
         }
     });
 });

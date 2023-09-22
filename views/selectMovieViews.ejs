@@ -1,9 +1,98 @@
 <%- include("./partials/head.ejs")-%>
 <%- include("./partials/nav.ejs")-%>
 
-<div class="selectMovie-container">
+<div class="reserve-container">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%- `${c1Image}` -%>" class="img-fluid rounded-start" alt="<%- `${c1Title}` -%> image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Cinema 1 | <%- `${c1Title}` -%></h5>
+          <p class="card-text">Reserve for:</p>
+          <div class="timeslot-container">
+          <a href="/cinema1" class="btn btn-primary">11:00AM to 1:00PM</a>
+          <a href="/cinema1" class="btn btn-primary">1:30PM to 3:30PM</a>
+          <a href="/cinema1" class="btn btn-primary">4:00PM to 6:00PM</a>
+          <a href="/cinema1" class="btn btn-primary">6:30PM to 8:30PM</a>
+          <a href="/cinema1" class="btn btn-primary">9:00PM to 11:00PM</a>
+          <a href="/cinema1" class="btn btn-primary">11:30PM to 1:30AM</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="select-wrapper">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%- `${c2Image}` -%>" class="img-fluid rounded-start" alt="<%- `${c2Title}` -%> image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Cinema 2 | <%- `${c2Title}` -%></h5>
+          <p class="card-text">Reserve for:</p>
+          <div class="timeslot-container">
+          <a href="/cinema2" class="btn btn-primary">11:00AM to 1:00PM</a>
+          <a href="/cinema2" class="btn btn-primary">1:30PM to 3:30PM</a>
+          <a href="/cinema2" class="btn btn-primary">4:00PM to 6:00PM</a>
+          <a href="/cinema2" class="btn btn-primary">6:30PM to 8:30PM</a>
+          <a href="/cinema2" class="btn btn-primary">9:00PM to 11:00PM</a>
+          <a href="/cinema2" class="btn btn-primary">11:30PM to 1:30AM</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%- `${c3Image}` -%>" class="img-fluid rounded-start" alt="<%- `${c3Title}` -%> image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Cinema 3 | <%- `${c3Title}` -%></h5>
+          <p class="card-text">Reserve for:</p>
+          <div class="timeslot-container">
+            <a href="/cinema3" class="btn btn-primary">11:00AM to 1:00PM</a>
+            <a href="/cinema3" class="btn btn-primary">1:30PM to 3:30PM</a>
+            <a href="/cinema3" class="btn btn-primary">4:00PM to 6:00PM</a>
+            <a href="/cinema3" class="btn btn-primary">6:30PM to 8:30PM</a>
+            <a href="/cinema3" class="btn btn-primary">9:00PM to 11:00PM</a>
+            <a href="/cinema3" class="btn btn-primary">11:30PM to 1:30AM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%- `${c4Image}` -%>" class="img-fluid rounded-start" alt="<%- `${c4Title}` -%> image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Cinema 4 | <%- `${c4Title}` -%></h5>
+          <p class="card-text">Reserve for:</p>
+          <div class="timeslot-container">
+            <a href="/cinema4" class="btn btn-primary">11:00AM to 1:00PM</a>
+            <a href="/cinema4" class="btn btn-primary">1:30PM to 3:30PM</a>
+            <a href="/cinema4" class="btn btn-primary">4:00PM to 6:00PM</a>
+            <a href="/cinema4" class="btn btn-primary">6:30PM to 8:30PM</a>
+            <a href="/cinema4" class="btn btn-primary">9:00PM to 11:00PM</a>
+            <a href="/cinema4" class="btn btn-primary">11:30PM to 1:30AM</a>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- <div class="select-wrapper">
 <div class="dropdown">
     <h3>Please select a Movie</h3>
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -16,7 +105,7 @@
       <li><a class="dropdown-item" href="/cinema4">Cinema 4 | <%- `${c4Title}` -%></a></li>
     </ul>
   </div>
-</div>
+</div> -->
 
 
 </div>
