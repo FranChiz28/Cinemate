@@ -61,20 +61,20 @@ router.get('/movieInfo', async(req,res)=>{
 if(req.session.user){
         try{
             const cinema1 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt26533869&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key': process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             });
             const cinema2 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt13086266&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
             const cinema3 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt10160976&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
             const cinema4 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt22687790&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
@@ -93,20 +93,20 @@ router.get("/reserve", async (req, res)=>{
     if(req.session.user){
         try{
             const cinema1 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt26533869&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             });
             const cinema2 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt13086266&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
             const cinema3 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt10160976&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
             const cinema4 = await axios.get('https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt22687790&currentCountry=US', {
-                headers:{'X-RapidAPI-Key': '035f6a016fmshcd1dcbcbafc21c5p1d65dfjsn08f6b1ac3098',
+                headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
         
