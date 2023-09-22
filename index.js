@@ -1,6 +1,7 @@
 // to import dependencies
 const express = require("express");
 require("dotenv").config();
+const path = require('path');
 const ejs = require("ejs");
 const bodyParser = require('body-parser');
 const session = require("express-session");
@@ -18,7 +19,9 @@ app.use(session({
 
 app.set("view engine", "ejs");
 
-app.use(express.static("public"));
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static(path.join(__dirname, 'public')));
+
 
 app.use(express.urlencoded({extended:false}));
 
