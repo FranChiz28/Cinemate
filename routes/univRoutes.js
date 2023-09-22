@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
-const collection = require("../module/mongodb");
+// const collection = require("../module/mongodb");
 
 const user1 = {
     trialName: "TestUser",
@@ -30,18 +30,18 @@ router.post("/login", (req, res)=>{
 
 });
 
-router.post("/signup",async (req, res)=>{
+// router.post("/signup",async (req, res)=>{
 
-    const data = {
-        userName:req.body.userName,
-        email:req.body.email,
-        password:req.body.password
-    }
+//     const data = {
+//         userName:req.body.userName,
+//         email:req.body.email,
+//         password:req.body.password
+//     }
 
-    await collection.insertMany([data])
+//     await collection.insertMany([data])
 
-    res.redirect('/dashboard');
-})
+//     res.redirect('/dashboard');
+// })
 
 router.get("/dashboard", (req, res)=>{
 
