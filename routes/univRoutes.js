@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const axios = require('Axios');
+const axios = require('axios');
 const collection = require("../module/mongodb");
 
 const user1 = {
