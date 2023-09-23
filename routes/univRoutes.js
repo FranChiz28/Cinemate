@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
+const {check, validationResult} = require('express-validator');
 // const collection = require("../module/mongodb");
 
 const user1 = {
@@ -17,8 +18,30 @@ router.get("/login", (req, res)=>{
     res.render("loginViews", {title: "Login"});
 });
 
-router.post("/login", (req, res)=>{
-    
+router.post("/login", [
+    check('email')
+    .notEmpty()
+    .withMessage('email is required.'),
+
+    check('password')
+    .notEmpty()
+    .withMessage('password is required.')
+    .isLength({min:8})
+    .withMessage('password must be at least 8 characters.')
+]
+
+
+,(req, res)=>{
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        console.log(errors);
+        // res.send({ errors: errors.array() });
+        res.render('loginViews',{title:'Login', dataError: 'Please check your input' });
+    }else{
         if(user1.trialEmail==req.body.email && user1.trialPassword == req.body.password){
             req.session.user = user1.trialName;
             res.redirect("/dashboard")
@@ -27,7 +50,7 @@ router.post("/login", (req, res)=>{
         } else {
         res.render('loginViews', {title: 'Login', dataError:'user not found'})
     }
-
+}
 });
 
 // router.post("/signup",async (req, res)=>{
