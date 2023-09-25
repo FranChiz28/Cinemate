@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
-// const collection = require("../module/mongodb");
+const {check, validationResult} = require('express-validator');
 
 const user1 = {
     trialName: "TestUser",
@@ -17,8 +17,30 @@ router.get("/login", (req, res)=>{
     res.render("loginViews", {title: "Login"});
 });
 
-router.post("/login", (req, res)=>{
-    
+router.post("/login", [
+    check('email')
+    .notEmpty()
+    .withMessage('email is required.'),
+
+    check('password')
+    .notEmpty()
+    .withMessage('password is required.')
+    .isLength({min:8})
+    .withMessage('password must be at least 8 characters.')
+]
+
+
+,(req, res)=>{
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+        console.log(errors);
+        // res.send({ errors: errors.array() });
+        res.render('loginViews',{title:'Login', dataError: 'Please check your input' });
+    }else{
         if(user1.trialEmail==req.body.email && user1.trialPassword == req.body.password){
             req.session.user = user1.trialName;
             res.redirect("/dashboard")
@@ -27,34 +49,47 @@ router.post("/login", (req, res)=>{
         } else {
         res.render('loginViews', {title: 'Login', dataError:'user not found'})
     }
-
+}
 });
 
-// router.post("/signup",async (req, res)=>{
 
-//     const data = {
-//         userName:req.body.userName,
-//         email:req.body.email,
-//         password:req.body.password
-//     }
+router.get("/dashboard", async (req, res)=>{
 
-//     await collection.insertMany([data])
+    // if(req.session.user){
 
-//     res.redirect('/dashboard');
-// })
+    const comingSoon = await axios.get('https://imdb8.p.rapidapi.com/title/get-coming-soon-movies', {
+        params: {
+            homeCountry: 'US',
+            purchaseCountry: 'US',
+            currentCountry: 'US'
+          },
+          headers: {
+            'X-RapidAPI-Key': process.env.API_KEY,
+            'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+          }
+    })
 
-router.get("/dashboard", (req, res)=>{
+    let movieList=[];
 
-    if(req.session.user){
+    for(let i=0; i<10; i++){
+        let endpoint = comingSoon.data[i].id;
+        let startIndex = endpoint.indexOf('/title/') + 7;
+        let endIndex = endpoint.indexOf('/', startIndex);
 
-        let userPOS=10000;
-        let allPOS=100000;
-        let userHolder = `Php ${userPOS}`;
-        let allHolder = `Php ${allPOS}`;
-        res.render("dashViews", {title: "Dashboard", user:req.session.user, userRevenue:userHolder, allRevenue:allHolder});
-    }else{
-        res.sendStatus(403);
+        if (startIndex !== -1 && endIndex !== -1){
+            let imdbID = endpoint.substring(startIndex,endIndex);
+            movieList.push(imdbID);
+        }else {
+            console.log('Pattern not found in URL.');
+        }
     }
+
+    console.log(movieList);
+
+    // res.render("dashViews", {title: "Dashboard", user:req.session.user});
+    // }else{
+    //     res.sendStatus(403);
+    // }
 });
 
 router.get('/movieInfo', async(req,res)=>{
@@ -120,12 +155,52 @@ router.get("/reserve", async (req, res)=>{
     }
 });
 
-router.get("/cinema1", (req, res)=>{
-    if(req.session.user){
+router.get("/cinema1/block1", (req, res)=>{
+    // if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
-    }else{
-        res.sendStatus(403);
-    }
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block2", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block3", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block4", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block5", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block6", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
 });
 
 router.get("/cinema2", (req, res)=>{
