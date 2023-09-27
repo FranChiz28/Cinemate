@@ -38,7 +38,6 @@ router.post("/login", [
 
     if(!errors.isEmpty()){
         console.log(errors);
-        // res.send({ errors: errors.array() });
         res.render('loginViews',{title:'Login', dataError: 'Please check your input' });
     }else{
         if(user1.trialEmail==req.body.email && user1.trialPassword == req.body.password){
@@ -55,7 +54,7 @@ router.post("/login", [
 
 router.get("/dashboard", async (req, res)=>{
 
-    // if(req.session.user){
+    if(req.session.user){
 
     const comingSoon = await axios.get('https://imdb8.p.rapidapi.com/title/get-coming-soon-movies', {
         params: {
@@ -84,12 +83,12 @@ router.get("/dashboard", async (req, res)=>{
         }
     }
 
-    console.log(movieList);
+    // console.log(movieList); tbc - insert axios to get movie details
 
-    // res.render("dashViews", {title: "Dashboard", user:req.session.user});
-    // }else{
-    //     res.sendStatus(403);
-    // }
+    res.render("dashViews", {title: "Dashboard", user:req.session.user});
+    }else{
+        res.sendStatus(403);
+    }
 });
 
 router.get('/movieInfo', async(req,res)=>{

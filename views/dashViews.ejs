@@ -1,21 +1,209 @@
 <%- include("./partials/head.ejs")-%>
 <%- include("./partials/nav.ejs")-%>
 <div class="dash-container">
-
+    <div class="user-header">
     <div class="greetings">
-        <h3>Hello, <%- `${user}`-%>!</h3> <!--change variable for the name-->
+        <h3>Hello, <%- `${user}`-%>!</h3>
     </div>
 
-    <div class="announcement-container">
-        <h2><ion-icon name="megaphone-outline"></ion-icon>Announcement:<div id="new-announcement"> No new announcement...</div></h2>
+    <div class="bookmarked">
+        <h6><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
+            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+          </svg> Library</h6>
     </div>
 
-    <div class="chart-container" style="display: flex; flex-direction: row;">
-        <canvas class="movieChart" id="movie1Chart" style="width:100%; max-width: 23vw; height: 100%; max-height: 50vh;"></canvas>
-        <canvas class="movieChart" id="movie2Chart" style="width:100%; max-width: 23vw; height: 100%; max-height: 50vh;"></canvas>
-        <canvas class="movieChart" id="movie3Chart" style="width:100%; max-width: 23vw; height: 100%; max-height: 50vh;"></canvas>
-        <canvas class="movieChart" id="movie4Chart" style="width:100%; max-width: 23vw; height: 100%; max-height: 50vh;"></canvas>
+    </div>
+
+    <div class="comingSoon-banner"><h3>Coming Soon</h3></div>
+
+    <div class="cards-container">
+
+
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <button type="button" class="btn btn-primary">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <div class="library-container">
+        <div class="bookmarked-container">
+            <div class="close-library-container"><button type="button" class="btn btn-dark">X</button></div>
+            <h3>My Library</h3>
+            <hr>
+            <ul>
+                <li> | <button type="button" class="btn btn-outline-danger">X</button></li>
+            </ul>
+        </div>
     </div>
 </div>
-<%- include ("./partials/chartJavaScript.ejs") -%>
+<%- include("./partials/comingSoonJavaScript.ejs") -%>
 <%- include("./partials/footer.ejs") -%>

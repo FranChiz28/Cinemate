@@ -1,0 +1,17 @@
+<script>
+  document.querySelector('.bookmarked').addEventListener('click', openLibrary)
+  document.querySelector('.close-library-container').addEventListener('click', openLibrary)
+  
+  function openLibrary() {
+  let library = document.querySelector('.library-container');
+  if (library.style.visibility !== "hidden") {
+  library.style.visibility = "hidden"
+  } else {
+  library.style.visibility = "initial"
+  }
+
+  }
+
+
+
+</script>
