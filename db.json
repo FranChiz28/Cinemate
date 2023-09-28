@@ -1,10 +1,16 @@
 {
-   "users": [
+  "users": [
     {
-        "id": "5d2573a6-17a1-4a50-8065-eea853b1e0ca",
-        "name": "RD Vincent Gaspar",
-        "email": "rolandjohn111@gmail.com",
-        "password": "lando123"
-      }
-    ]
+      "id": "5d2573a6-17a1-4a50-8065-eea853b1e0ca",
+      "name": "Roland John Gaspar",
+      "email": "rolandjohn111@gmail.com",
+      "password": "lando123"
+    },
+    {
+      "id": "0d432019-48d6-4383-849a-49b9bc7d41c3",
+      "name": "RD Vincent Gaspar",
+      "email": "rdvincentgaspar@gmail.com",
+      "password": "12345678"
+    }
+  ]
 }
