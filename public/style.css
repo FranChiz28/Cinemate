@@ -333,6 +333,10 @@
 
 
 /* =================== reserve seat page ===================== */
+.row{
+    display: flexbox;
+
+}
 
 .reserve-container {
     background-color: rgb(231, 234, 238);
