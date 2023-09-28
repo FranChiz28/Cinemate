@@ -1,33 +1,35 @@
 <script>
     const container = document.querySelector('container');
-    const seat = document.querySelectorAll('.seat');
+    const seat = document.querySelectorAll('seat');
     const count = document.getElementById('count');
     const total = document.getElementById('total');
 
 
-// function setMovieData(movieIndex){
-//     localStorage.setItem('selectMovieIndex', movieIndex);
-// }
-//  function updateSelectCount(){
-//     const selectSeat = document.querySelectorAll('.seat-container .seat.selected');
+function setMovieData(movieIndex){
+    localStorage.setItem('selectMovieIndex', movieIndex);
+}
+ function updateSelectCount(){
+    const selectSeat = document.querySelectorAll('.seat .seat.selected');
     
-//     const seatIndex = [...selectedSeats].map((seat)=> [...seats].indexOf(seat));
-//     localStorage.setItem('selectedSeats',JSON.stringify(seatIndex));
+    const seatIndex = [...selectedSeats].map((seat)=> [...seats].indexOf(seat));
+    localStorage.setItem('selectedSeats',JSON.stringify(seatIndex));
 
-//     const selectedSeatsCount = selectedSeats.lenght;
-//     count.innertext = selectedSeatsCount;
-//  }
+    const selectedSeatsCount = selectedSeats.lenght;
+    count.innertext = selectedSeatsCount;
+ }
 
 
 //  function populateUI() {
+
 //     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
 //   if (selectedSeats !== null && selectedSeats.length > 0) {
 //     seats.forEach((seat, index) => {
 //       if (selectedSeats.indexOf(index) > -1) {
-//         seat.classList.add('selected');
+//         seat.classList.add('seat');
 //       }
 //     });
-//  }
+//  }}
+    
 //  const selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
 
 // if (selectedMovieIndex !== null) {
@@ -42,17 +44,28 @@
 
 
 // updateSelectCount();
-// }
-function updateSelectedCount(){
-    const selectedSeats = document.querySelectorAll('.seat-column1 .seat-column1.seleted');
-     console.log(selectedSeats); 
-      
-}
 
-container.addEventListener('click', (e) =>{
-    if(e.target.classlist.contains('seat'));
-    console.log(e.target)
-});
+
+    seat.forEach(div => { div.addEventListener('click', ()=> {
+        const seatID = div.getAttribute('id');
+
+        if (document.getElementById(seatID).style.backgroundColor !== "blue"){
+            document.getElementById(seatID).style.backgroundColor = "blue";
+        console.log(seatID);
+        } else {
+            document.getElementById(seatID).style.backgroundColor = "transparent";
+        }
+        
+        })
+    })
+
+// 
+
+
+// container.addEventListener('click', (e) =>{
+//     if(e.target.classlist.contains('seat'));
+//     console.log(e.target)
+// });
 
     // seat.forEach(div => { div.addEventListener('click', ()=> {
     //     const seatID = div.getAttribute('id');
@@ -62,5 +75,4 @@ container.addEventListener('click', (e) =>{
     //     })
     // });
  
- updateSelectedCount();
 </script>
