@@ -12,6 +12,15 @@
 
   }
 
+// add to Library
+const bookmarked = document.querySelectorAll('.addToLib');
 
+bookmarked.forEach(button => { button.addEventListener('click', ()=> {
+    const movieID = button.getAttribute('value-ID');
+    const movieName = button.getAttribute('value-Name')
+
+    console.log(movieID, movieName);
+})
+})
 
 </script>
