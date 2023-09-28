@@ -5,19 +5,18 @@
     const total = document.getElementById('total');
 
 
-function setMovieData(movieIndex){
-    localStorage.setItem('selectMovieIndex', movieIndex);
-}
- function updateSelectCount(){
-    const selectSeat = document.querySelectorAll('.seat .seat.selected');
+// function setMovieData(movieIndex){
+//     localStorage.setItem('selectMovieIndex', movieIndex);
+// }
+//  function updateSelectCount(){
+//     const selectSeat = document.querySelectorAll('.seat .seat.selected');
     
-    const seatIndex = [...selectedSeats].map((seat)=> [...seats].indexOf(seat));
-    localStorage.setItem('selectedSeats',JSON.stringify(seatIndex));
+//     const seatIndex = [...selectedSeats].map((seat)=> [...seats].indexOf(seat));
+//     localStorage.setItem('selectedSeats',JSON.stringify(seatIndex));
 
-    const selectedSeatsCount = selectedSeats.lenght;
-    count.innertext = selectedSeatsCount;
- }
-
+//     const selectedSeatsCount = selectedSeats.lenght;
+//     count.innertext = selectedSeatsCount;
+ 
 
 //  function populateUI() {
 
