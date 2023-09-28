@@ -83,12 +83,26 @@ router.get("/dashboard", async (req, res)=>{
         }
     }
 
-    // console.log(movieList); tbc - insert axios to get movie details
+    let movieDetails = [];
 
-    res.render("dashViews", {title: "Dashboard", user:req.session.user});
+    for(let i=0; i<10; i++){
+        let imdbID = movieList[i];
+        let url1 = 'https://imdb8.p.rapidapi.com/title/get-overview-details?tconst='
+        let url2 = '&currentCountry=US'
+        const response = await axios.get(url1.concat(imdbID.concat(url2)), {
+            headers:{'X-RapidAPI-Key': process.env.API_KEY,
+                'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
+        });
+
+        movieDetails[i] = response.data;
+    }
+
+
+    res.render("dashViews", {title: "Dashboard", user:req.session.user, movie1Title:movieDetails[0].title.title, movie1Image:movieDetails[0].title.image.url, movie1Rating:movieDetails[0].ratings.rating, movie1Genre:movieDetails[0].genres, movie1Release:comingSoon.data[0].releaseDate, movie2Title:movieDetails[1].title.title, movie2Image:movieDetails[1].title.image.url, movie2Rating:movieDetails[1].ratings.rating, movie2Genre:movieDetails[1].genres, movie2Release:comingSoon.data[1].releaseDate, movie3Title:movieDetails[2].title.title, movie3Image:movieDetails[2].title.image.url, movie3Rating:movieDetails[2].ratings.rating, movie3Genre:movieDetails[2].genres, movie3Release:comingSoon.data[2].releaseDate, movie4Title:movieDetails[3].title.title, movie4Image:movieDetails[3].title.image.url, movie4Rating:movieDetails[3].ratings.rating, movie4Genre:movieDetails[3].genres, movie4Release:comingSoon.data[3].releaseDate, movie5Title:movieDetails[4].title.title, movie5Image:movieDetails[4].title.image.url, movie5Rating:movieDetails[4].ratings.rating, movie5Genre:movieDetails[4].genres, movie5Release:comingSoon.data[4].releaseDate, movie6Title:movieDetails[5].title.title, movie6Image:movieDetails[5].title.image.url, movie6Rating:movieDetails[5].ratings.rating, movie6Genre:movieDetails[5].genres, movie6Release:comingSoon.data[5].releaseDate, movie7Title:movieDetails[6].title.title, movie7Image:movieDetails[6].title.image.url, movie7Rating:movieDetails[6].ratings.rating, movie7Genre:movieDetails[6].genres, movie7Release:comingSoon.data[6].releaseDate, movie8Title:movieDetails[7].title.title, movie8Image:movieDetails[7].title.image.url, movie8Rating:movieDetails[7].ratings.rating, movie8Genre:movieDetails[7].genres, movie8Release:comingSoon.data[7].releaseDate, movie9Title:movieDetails[8].title.title, movie9Image:movieDetails[8].title.image.url, movie9Rating:movieDetails[8].ratings.rating, movie9Genre:movieDetails[8].genres, movie9Release:comingSoon.data[8].releaseDate, movie10Title:movieDetails[9].title.title, movie10Image:movieDetails[9].title.image.url, movie10Rating:movieDetails[9].ratings.rating, movie10Genre:movieDetails[9].genres, movie10Release:comingSoon.data[9].releaseDate});
     }else{
         res.sendStatus(403);
     }
+
 });
 
 router.get('/movieInfo', async(req,res)=>{
