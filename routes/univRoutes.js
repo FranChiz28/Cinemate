@@ -30,25 +30,42 @@ router.post("/login", [
 ]
 
 
-,(req, res)=>{
-    const email = req.body.email;
-    const password = req.body.password;
+,async (req, res)=>{
+    //const email = req.body.email;
+    //const password = req.body.password;
 
     const errors = validationResult(req);
 
     if(!errors.isEmpty()){
         console.log(errors);
         res.render('loginViews',{title:'Login', dataError: 'Please check your input' });
-    }else{
-        if(user1.trialEmail==req.body.email && user1.trialPassword == req.body.password){
-            req.session.user = user1.trialName;
-            res.redirect("/dashboard")
-        } else if(user1.trialEmail==req.body.email || user1.trialPassword == req.body.password) {
-            res.render('loginViews', {title: 'Login', pwError:'incorrect user/password'})
-        } else {
-        res.render('loginViews', {title: 'Login', dataError:'user not found'})
     }
-}
+
+    const { email, password } = req.body;
+
+    try {
+        const response = await axios.get(`http://localhost:3001/users?email=${email}&password=${password}`);
+    
+        if (response.data.length === 1) {
+            req.session.user = response.data[0];
+            res.redirect("/dashboard")
+        } else {
+            res.render('loginViews', {title: 'Login', dataError:'user not found'})
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server Error');
+    }
+    //else{
+//         if(user1.trialEmail==req.body.email && user1.trialPassword == req.body.password){
+//             req.session.user = user1.trialName;
+//             res.redirect("/dashboard")
+//         } else if(user1.trialEmail==req.body.email || user1.trialPassword == req.body.password) {
+//             res.render('loginViews', {title: 'Login', pwError:'incorrect user/password'})
+//         } else {
+//         res.render('loginViews', {title: 'Login', dataError:'user not found'})
+//     }
+// }
 });
 
 
