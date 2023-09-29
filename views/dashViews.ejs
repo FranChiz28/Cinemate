@@ -3,6 +3,7 @@
 <div class="dash-container">
     <div class="greetRev-container">
     <div class="greetings">
+<<<<<<< Updated upstream
         <h3>Hello, <%- `${user}`-%>!</h3> <!--change variable for the name-->
     </div>
         <div class="revenue" id="user-revenue">
@@ -12,6 +13,217 @@
         <div class="revenue" id="all-revenue">
             <h5>Overall POS Revenue:</h5>
             <h3><%-`${allRevenue}`-%></h3>
+=======
+        <h3>Hello, <%- `${user}`-%>!</h3>
+    </div>
+
+    <div class="bookmarked">
+        <h6><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
+            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+          </svg> Library</h6>
+    </div>
+
+    </div>
+
+    <div class="comingSoon-banner"><h3>Coming Soon</h3></div>
+
+    <div class="cards-container">
+
+
+
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie1Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie1Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title" ><%- `${movie1Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie1Rating}` -%> | <%- `${movie1Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie1Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie1ID}` -%>" value-Name="<%- `${movie1Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie2Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie2Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie2Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie2Rating}` -%> | <%- `${movie2Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie2Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie2ID}` -%>" value-Name="<%- `${movie2Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie3Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie3Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie3Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie3Rating}` -%> | <%- `${movie3Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie3Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie3ID}` -%>" value-Name="<%- `${movie3Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie4Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie4Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie4Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie4Rating}` -%> | <%- `${movie4Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie4Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie4ID}` -%>" value-Name="<%- `${movie4Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie5Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie5Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie5Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie5Rating}` -%> | <%- `${movie5Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie5Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie5ID}` -%>" value-Name="<%- `${movie5Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie6Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie6Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie6Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie6Rating}` -%> | <%- `${movie6Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie6Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie6ID}` -%>" value-Name="<%- `${movie6Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie7Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie7Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie7Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie7Rating}` -%> | <%- `${movie7Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie7Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie7ID}` -%>" value-Name="<%- `${movie7Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie8Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie8Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie8Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie8Rating}` -%> | <%- `${movie8Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie8Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie8ID}` -%>" value-Name="<%- `${movie8Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie9Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie9Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie9Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie9Rating}` -%> | <%- `${movie9Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie9Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie9ID}` -%>" value-Name="<%- `${movie9Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%- `${movie10Image}` -%>" class="img-fluid rounded-start" alt="<%- `${movie10Title}` -%> image">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%- `${movie10Title}` -%></h5>
+                  <h6 class="movie-rating"><ion-icon name="star-outline"></ion-icon><%- `${movie10Rating}` -%> | <%- `${movie10Genre}` -%></h6>
+                  <p>Release Date: <%- `${movie10Release}` -%></p>
+                  <button type="button" class="btn btn-primary addToLib" value-ID="<%- `${movie10ID}` -%>" value-Name="<%- `${movie10Title}` -%>">Add to Library <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                  </svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <div class="library-container">
+        <div class="bookmarked-container">
+            <div class="close-library-container"><button type="button" class="btn btn-dark">X</button></div>
+            <h3>My Library</h3>
+            <hr>
+            <ul>
+                <li> | <button type="button" class="btn btn-outline-danger">X</button></li>
+            </ul>
+>>>>>>> Stashed changes
         </div>
     </div>
 

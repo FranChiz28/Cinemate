@@ -357,6 +357,22 @@
     flex-wrap: wrap;
 }
 
+<<<<<<< Updated upstream
+=======
+
+.cinema-container {
+    background-color: rgb(231, 234, 238);
+    width: 95vw;
+    height:100vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: fixed;
+    right:0px
+}
+
+>>>>>>> Stashed changes
 #screen{
     border: 2px solid rgb(54, 130, 245);
     margin-top: 10vh;

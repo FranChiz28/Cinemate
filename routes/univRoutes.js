@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
+<<<<<<< Updated upstream
 // const collection = require("../module/mongodb");
+=======
+const {check, validationResult} = require('express-validator');
+>>>>>>> Stashed changes
 
 const user1 = {
     trialName: "TestUser",
@@ -38,12 +42,17 @@ router.post("/login", (req, res)=>{
 //         password:req.body.password
 //     }
 
+<<<<<<< Updated upstream
 //     await collection.insertMany([data])
 
 //     res.redirect('/dashboard');
 // })
 
 router.get("/dashboard", (req, res)=>{
+=======
+
+router.get("/dashboard", async (req, res)=>{
+>>>>>>> Stashed changes
 
     if(req.session.user){
 
@@ -120,6 +129,7 @@ router.get("/reserve", async (req, res)=>{
     }
 });
 
+<<<<<<< Updated upstream
 router.get("/cinema1", (req, res)=>{
     if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
@@ -152,6 +162,80 @@ router.get("/cinema4", (req, res)=>{
     }
 });
 
+=======
+router.get("/cinema1/block1", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block2", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block3", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block4", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block5", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema1/block6", (req, res)=>{
+    // if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    // }else{
+    //     res.sendStatus(403);
+    // }
+});
+
+router.get("/cinema2", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema3", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema4", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+>>>>>>> Stashed changes
 router.get("/logout", (req, res)=>{
     req.session.destroy(function(err){
         if(err){
