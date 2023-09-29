@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "start": "nodemon index.js"
   },
   "keywords": [],
@@ -19,5 +20,8 @@
     "express-validator": "^7.0.1",
     "json-server": "^0.17.3",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
