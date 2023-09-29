@@ -1,4 +1,5 @@
 <script>
+    // turn reserved seats to blue and vice versa
     const seat = document.querySelectorAll('.seat');
 
     seat.forEach(div => { div.addEventListener('click', ()=> {
@@ -6,11 +7,42 @@
 
         if (document.getElementById(seatID).style.backgroundColor !== "blue"){
             document.getElementById(seatID).style.backgroundColor = "blue";
+            reservedSeatCount++;
+            availableSeatCount--;
+            updateCounts();
         console.log(seatID);
         } else {
             document.getElementById(seatID).style.backgroundColor = "transparent";
+            reservedSeatCount--;
+            availableSeatCount++;
+            updateCounts();
         }
-        
         })
     })
+
+    //count reserved and not reserved seats
+    let reservedSeatCount = 0;
+    let availableSeatCount = 0;
+
+    seat.forEach(div => {
+        if(div.style.backgroundColor === 'blue' || window.getComputedStyle(div).backgroundColor === 'blue'){
+            reservedSeatCount++;
+        } else {
+            availableSeatCount++;
+        }
+    })
+
+    const countArea = document.querySelector('.summary');
+    const countsDisplay = document.createElement('p');
+    countsDisplay.innerHTML = `Reserved Seats Count: ${reservedSeatCount} ; Available Seats Count: ${availableSeatCount}`;
+
+    countArea.appendChild(countsDisplay);
+
+    function updateCounts(){
+        const newCountsDisplay = document.createElement('p');
+        const oldCountsDisplay = countArea.firstChild;
+        newCountsDisplay.innerHTML = `Reserved Seats Count: ${reservedSeatCount} ; Available Seats Count: ${availableSeatCount}`;
+
+    countArea.replaceChild(newCountsDisplay, oldCountsDisplay);
+    }
 </script>
