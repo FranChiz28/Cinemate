@@ -104,7 +104,7 @@ router.post('/signup', [
 
         if (!errors.isEmpty()) {
             const alert = errors.array()
-            res.render('signup', { alert })
+            res.render('signup', { title: "Signup", alert })
             // return res.status(400).json({ errors: errors.array() });
         }
 
