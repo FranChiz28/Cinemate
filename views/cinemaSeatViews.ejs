@@ -1,14 +1,9 @@
 <%- include("./partials/head.ejs")-%>
 <%- include("./partials/nav.ejs")-%>
 
-<<<<<<< Updated upstream
 <div class="reserve-container">
     <div id="screen"><h1>Screen</h1></div>
     <div class="screen-seat-part"></div>
-=======
-<div class="cinema-container">
-    <div id="screen"><h1>Screen</h1></div>
->>>>>>> Stashed changes
     <div class="seat-container">
         <div class="seat-column1 seat-row1">
             <div class="seat" id="seat-a1">A1</div>
@@ -22,14 +17,14 @@
             <div class="seat" id="seat-a9">A9</div>
         </div>
         <div class="seat-column2 seat-row1">
-            <div class="seat" id="seat-a10">A10</div>
-            <div class="seat" id="seat-a11" >A11</div>
-            <div class="seat" id="seat-a12">A12</div>
-            <div class="seat" id="seat-a13">A13</div>
-            <div class="seat" id="seat-a14" >A14</div>
-            <div class="seat" id="seat-a15">A15</div>
-            <div class="seat" id="seat-a16" >A16</div>
-            <div class="seat" id="seat-a17">A17</div>
+            <div class="seat" id="seat-a10" onclick="document.getElementById('').style.visibility='hidden'">A10</div>
+            <div class="seat" id="seat-a11" onclick="document.getElementById('').style.visibility='hidden'">A11</div>
+            <div class="seat" id="seat-a12" onclick="document.getElementById('').style.visibility='hidden'">A12</div>
+            <div class="seat" id="seat-a13" onclick="document.getElementById('').style.visibility='hidden'">A13</div>
+            <div class="seat" id="seat-a14" onclick="document.getElementById('').style.visibility='hidden'">A14</div>
+            <div class="seat" id="seat-a15" onclick="document.getElementById('').style.visibility='hidden'">A15</div>
+            <div class="seat" id="seat-a16" onclick="document.getElementById('').style.visibility='hidden'">A16</div>
+            <div class="seat" id="seat-a17" onclick="document.getElementById('').style.visibility='hidden'">A17</div>
             <div class="seat" id="seat-a18">A18</div>
         </div>
         <div class="seat-column1 seat-row2">
@@ -169,7 +164,21 @@
             You Selected <span id="count">0</span> seats
         </p>
         <div class="screen-seat-part"></div>
-            <button type="submit" class="btn btn-primary">Reserve</button>
+            <div class="summary"></div>
+            
+    </div>
+    <div><button type="submit" class="btn btn-primary reserveConfirm">Reserve</button></div>
+
+    <div class="library-container">
+        <div class="bookmarked-container">
+            <div class="close-library-container"><button type="button" class="btn btn-dark">X</button></div>
+            <h3>Your Reserved Seats</h3>
+            <hr>
+            <ul class="bookmarked-list">
+
+            </ul>
+            <button type="submit" class="btn btn-primary confirmReserve">Reserve</button>
+        </div>
     </div>
 </div>
 <%- include("./partials/reserveJavaScript.ejs") -%>
