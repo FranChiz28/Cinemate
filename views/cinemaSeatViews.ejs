@@ -2,7 +2,7 @@
 <%- include("./partials/nav.ejs")-%>
 
 <div class="cinema-container">
-    <div id="screen"><h1>Screen</h1></div>
+    <div id="screen"><h1>Screen | <%- `${movieTitle}` -%></h1></div>
     <div class="seat-container">
         <div class="seat-column1 seat-row1">
             <div class="seat" id="seat-a1">A1</div>
@@ -162,7 +162,19 @@
             <div class="summary"></div>
             
     </div>
-    <div><button type="submit" class="btn btn-primary">Reserve</button></div>
+    <div><button type="submit" class="btn btn-primary reserveConfirm">Reserve</button></div>
+
+    <div class="library-container">
+        <div class="bookmarked-container">
+            <div class="close-library-container"><button type="button" class="btn btn-dark">X</button></div>
+            <h3>Your Reserved Seats</h3>
+            <hr>
+            <ul class="bookmarked-list">
+
+            </ul>
+            <button type="submit" class="btn btn-primary confirmReserve">Reserve</button>
+        </div>
+    </div>
 </div>
 <%- include("./partials/reserveJavaScript.ejs") -%>
 <%- include("./partials/footer.ejs") -%>
