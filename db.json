@@ -59,6 +59,13 @@
       "name": "",
       "email": "",
       "password": ""
+    },
+    {
+      "id": "c8b812d1-1213-43de-8dac-ea97091000a2",
+      "name": "Admin Francis",
+      "email": "francis@test.com",
+      "password": "12345678"
+
     }
   ]
 }

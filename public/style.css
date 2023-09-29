@@ -18,6 +18,7 @@
 .signup-container{
     width: 100vw;
     height: 100vh;
+    background-image: url('/static/assets/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -280,6 +281,7 @@
     display:flex;
     justify-content: space-evenly;
     position: fixed;
+    overflow-y: scroll;
     flex-wrap: wrap;
     right:0px
 }
@@ -294,6 +296,7 @@
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+    overflow-y: scroll;
     flex-wrap: wrap;
     position: fixed;
     right:0px
