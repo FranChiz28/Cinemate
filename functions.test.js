@@ -347,3 +347,15 @@ describe('/cinema4/block6 Status Test', () => {
         }
     })
 })
+
+describe('/logout Status Test', () => {
+    it('should return a successful status code', async () =>{
+        try{
+            const response = await axios.get('https://wd77p-cinemate.onrender.com/logout');
+
+            expect(response.status).toBe(200);
+        } catch (error) {
+            expect(error.response.status).toBe(404);
+        }
+    })
+})
