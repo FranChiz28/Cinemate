@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
+const { v4: uuidv4 } = require('uuid');
 const {check, validationResult} = require('express-validator');
 
 const user1 = {
@@ -68,6 +69,57 @@ router.post("/login", [
 // }
 });
 
+router.get("/signup", (req, res)=>{
+    res.render("signup", {title: "Signup"});
+});
+
+router.post('/signup', [
+    check('name')
+        .notEmpty()
+        .withMessage('Name cannot be empty!'),
+
+    check('email')
+        .notEmpty()
+        .withMessage('Email cannot be empty!')
+        .isEmail()
+        .withMessage('Email input is incorrect!'),
+
+    check('password')
+        .notEmpty()
+        .withMessage('Password connot be empty!')
+        .isLength({ min: 8 })
+        .withMessage('Password should be 8 characters or more!'),
+
+    check('confirmPassword')
+        .custom((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error('Password dont match');
+            }
+            return true;
+        })
+],
+    async (req, res) => {
+        // res.render('signup')
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            const alert = errors.array()
+            res.render('signup', { alert })
+            // return res.status(400).json({ errors: errors.array() });
+        }
+
+        // Implement user registration logic using Axios to interact with the JSON server
+        const { name, email, password } = req.body;
+
+        try {
+            await axios.post('http://localhost:3001/users', { id: uuidv4(), name, email, password });
+
+            res.redirect('/');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Server Error');
+        }
+    });
 
 router.get("/dashboard", async (req, res)=>{
 
