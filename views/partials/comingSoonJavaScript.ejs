@@ -17,10 +17,24 @@ const bookmarked = document.querySelectorAll('.addToLib');
 
 bookmarked.forEach(button => { button.addEventListener('click', ()=> {
     const movieID = button.getAttribute('value-ID');
-    const movieName = button.getAttribute('value-Name')
-
-    console.log(movieID, movieName);
+    const movieName = button.getAttribute('value-Name');
+    const bookmarkedArea = document.querySelector('.bookmarked-list');
+    const addList = document.createElement('li');
+    addList.innerHTML = `${movieID} || ${movieName} <button type="button" class="btn btn-outline-danger deleteButton">X</button>`
+    bookmarkedArea.appendChild(addList);
 })
+})
+
+// remove to Library
+const bookmarkedArea = document.querySelector('.bookmarked-list');
+
+bookmarkedArea.addEventListener('click', function(e){
+  if(e.target && e.target.classList.contains('deleteButton')){
+    const listItem=e.target.closest('li');
+    if(listItem){
+      listItem.remove();
+    }
+  }
 })
 
 </script>

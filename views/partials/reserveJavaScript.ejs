@@ -45,4 +45,57 @@
 
     countArea.replaceChild(newCountsDisplay, oldCountsDisplay);
     }
+
+    // reserve seat confirmation
+    document.querySelector('.reserveConfirm').addEventListener('click', openLibrary)
+  document.querySelector('.close-library-container').addEventListener('click', openLibrary)
+  
+  function openLibrary() {
+  let library = document.querySelector('.library-container');
+  if (library.style.visibility !== "hidden") {
+  library.style.visibility = "hidden"
+  } else {
+  library.style.visibility = "initial"
+  }
+
+  }
+
+// add to Library
+const reserved = document.querySelectorAll('.seat');
+
+reserved.forEach(div => { div.addEventListener('click', ()=> {
+    const seatID = div.getAttribute('id');
+    const bookmarkedArea = document.querySelector('.bookmarked-list');
+    const addList = document.createElement('li');
+    addList.innerHTML = `${seatID} <button type="button" class="btn btn-outline-danger deleteButton">X</button>`
+    bookmarkedArea.appendChild(addList);
+})
+})
+
+// remove to Library
+const bookmarkedArea = document.querySelector('.bookmarked-list');
+
+bookmarkedArea.addEventListener('click', function(e){
+  if(e.target && e.target.classList.contains('deleteButton')){
+    const listItem=e.target.closest('li');
+    if(listItem){
+      listItem.remove();
+    }
+  }
+})
+
+// confirm reserve
+const confirmReserveButton = document.querySelector('.confirmReserve');
+confirmReserveButton.addEventListener('click', () => {
+    if (confirm("Proceed to Payment?") == true){
+        alert('Reservation Successful');
+        openLibrary();
+        while (bookmarkedArea.firstChild) {
+            bookmarkedArea.removeChild(bookmarkedArea.firstChild)
+        };
+    } else {
+        alert('Reservation Unsuccessful');
+    }
+})
+
 </script>

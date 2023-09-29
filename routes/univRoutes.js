@@ -206,6 +206,8 @@ if(req.session.user){
 })
 
 
+const movieList = [];
+
 router.get("/reserve", async (req, res)=>{
     if(req.session.user){
         try{
@@ -226,6 +228,8 @@ router.get("/reserve", async (req, res)=>{
                 headers:{'X-RapidAPI-Key':  process.env.API_KEY,
                 'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'}
             })
+
+            movieList.push(cinema1.data.title.title, cinema2.data.title.title, cinema3.data.title.title, cinema3.data.title.title)
         
             res.render('selectMovieViews', {title: 'Select Movie', c1Title:cinema1.data.title.title, c2Title:cinema2.data.title.title, c3Title:cinema3.data.title.title, c4Title:cinema4.data.title.title, c1Image:cinema1.data.title.image.url, c2Image:cinema2.data.title.image.url, c3Image:cinema3.data.title.image.url, c4Image:cinema4.data.title.image.url})
         } catch (error) {
@@ -239,7 +243,7 @@ router.get("/reserve", async (req, res)=>{
 
 router.get("/cinema1/block1", (req, res)=>{
     // if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[0]});
     // }else{
     //     res.sendStatus(403);
     // }
@@ -247,7 +251,7 @@ router.get("/cinema1/block1", (req, res)=>{
 
 router.get("/cinema1/block2", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[0]});
     }else{
         res.sendStatus(403);
     }
@@ -255,7 +259,7 @@ router.get("/cinema1/block2", (req, res)=>{
 
 router.get("/cinema1/block3", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[0]});
     }else{
         res.sendStatus(403);
     }
@@ -263,7 +267,7 @@ router.get("/cinema1/block3", (req, res)=>{
 
 router.get("/cinema1/block4", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[0]});
     }else{
         res.sendStatus(403);
     }
@@ -271,7 +275,7 @@ router.get("/cinema1/block4", (req, res)=>{
 
 router.get("/cinema1/block5", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[0]});
     }else{
         res.sendStatus(403);
     }
@@ -279,7 +283,7 @@ router.get("/cinema1/block5", (req, res)=>{
 
 router.get("/cinema1/block6", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat",  movieTitle:movieList[0]});
     }else{
         res.sendStatus(403);
     }
@@ -287,7 +291,7 @@ router.get("/cinema1/block6", (req, res)=>{
 
 router.get("/cinema2/block1", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[1]});
     }else{
         res.sendStatus(403);
     }
@@ -295,7 +299,7 @@ router.get("/cinema2/block1", (req, res)=>{
 
 router.get("/cinema2/block2", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[1]});
     }else{
         res.sendStatus(403);
     }
@@ -303,7 +307,7 @@ router.get("/cinema2/block2", (req, res)=>{
 
 router.get("/cinema2/block3", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[1]});
     }else{
         res.sendStatus(403);
     }
@@ -311,7 +315,7 @@ router.get("/cinema2/block3", (req, res)=>{
 
 router.get("/cinema2/block4", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[1]});
     }else{
         res.sendStatus(403);
     }
@@ -319,7 +323,7 @@ router.get("/cinema2/block4", (req, res)=>{
 
 router.get("/cinema2/block5", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[1]});
     }else{
         res.sendStatus(403);
     }
@@ -327,7 +331,7 @@ router.get("/cinema2/block5", (req, res)=>{
 
 router.get("/cinema2/block6", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[1]});
     }else{
         res.sendStatus(403);
     }
@@ -336,7 +340,7 @@ router.get("/cinema2/block6", (req, res)=>{
 
 router.get("/cinema3/block1", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[2]});
     }else{
         res.sendStatus(403);
     }
@@ -344,7 +348,7 @@ router.get("/cinema3/block1", (req, res)=>{
 
 router.get("/cinema3/block2", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[2]});
     }else{
         res.sendStatus(403);
     }
@@ -352,7 +356,7 @@ router.get("/cinema3/block2", (req, res)=>{
 
 router.get("/cinema3/block3", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[2]});
     }else{
         res.sendStatus(403);
     }
@@ -360,7 +364,7 @@ router.get("/cinema3/block3", (req, res)=>{
 
 router.get("/cinema3/block4", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[2]});
     }else{
         res.sendStatus(403);
     }
@@ -368,7 +372,7 @@ router.get("/cinema3/block4", (req, res)=>{
 
 router.get("/cinema3/block5", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[2]});
     }else{
         res.sendStatus(403);
     }
@@ -376,7 +380,7 @@ router.get("/cinema3/block5", (req, res)=>{
 
 router.get("/cinema3/block6", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[2]});
     }else{
         res.sendStatus(403);
     }
@@ -386,7 +390,7 @@ router.get("/cinema3/block6", (req, res)=>{
 
 router.get("/cinema4/block1", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[3]});
     }else{
         res.sendStatus(403);
     }
@@ -394,7 +398,7 @@ router.get("/cinema4/block1", (req, res)=>{
 
 router.get("/cinema4/block2", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[3]});
     }else{
         res.sendStatus(403);
     }
@@ -402,7 +406,7 @@ router.get("/cinema4/block2", (req, res)=>{
 
 router.get("/cinema4/block3", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[3]});
     }else{
         res.sendStatus(403);
     }
@@ -410,7 +414,7 @@ router.get("/cinema4/block3", (req, res)=>{
 
 router.get("/cinema4/block4", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[3]});
     }else{
         res.sendStatus(403);
     }
@@ -418,7 +422,7 @@ router.get("/cinema4/block4", (req, res)=>{
 
 router.get("/cinema4/block5", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[3]});
     }else{
         res.sendStatus(403);
     }
@@ -426,7 +430,7 @@ router.get("/cinema4/block5", (req, res)=>{
 
 router.get("/cinema4/block6", (req, res)=>{
     if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
+        res.render("cinemaSeatViews", {title: "Select Seat", movieTitle:movieList[3]});
     }else{
         res.sendStatus(403);
     }
