@@ -194,46 +194,38 @@ router.get("/cinema1/block1", (req, res)=>{
 });
 
 router.get("/cinema1/block2", (req, res)=>{
-    // if(req.session.user){
+    if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
-    // }else{
-    //     res.sendStatus(403);
-    // }
+    }else{
+        res.sendStatus(403);
+    }
 });
 
 router.get("/cinema1/block3", (req, res)=>{
-    // if(req.session.user){
+    if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
-    // }else{
-    //     res.sendStatus(403);
-    // }
+    }else{
+        res.sendStatus(403);
+    }
 });
 
 router.get("/cinema1/block4", (req, res)=>{
-    // if(req.session.user){
+    if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
-    // }else{
-    //     res.sendStatus(403);
-    // }
+    }else{
+        res.sendStatus(403);
+    }
 });
 
 router.get("/cinema1/block5", (req, res)=>{
-    // if(req.session.user){
+    if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
-    // }else{
-    //     res.sendStatus(403);
-    // }
+    }else{
+        res.sendStatus(403);
+    }
 });
 
 router.get("/cinema1/block6", (req, res)=>{
-    // if(req.session.user){
-        res.render("cinemaSeatViews", {title: "Select Seat"});
-    // }else{
-    //     res.sendStatus(403);
-    // }
-});
-
-router.get("/cinema2", (req, res)=>{
     if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
     }else{
@@ -241,7 +233,7 @@ router.get("/cinema2", (req, res)=>{
     }
 });
 
-router.get("/cinema3", (req, res)=>{
+router.get("/cinema2/block1", (req, res)=>{
     if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
     }else{
@@ -249,13 +241,145 @@ router.get("/cinema3", (req, res)=>{
     }
 });
 
-router.get("/cinema4", (req, res)=>{
+router.get("/cinema2/block2", (req, res)=>{
     if(req.session.user){
         res.render("cinemaSeatViews", {title: "Select Seat"});
     }else{
         res.sendStatus(403);
     }
 });
+
+router.get("/cinema2/block3", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema2/block4", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema2/block5", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema2/block6", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+
+router.get("/cinema3/block1", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema3/block2", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema3/block3", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema3/block4", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema3/block5", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema3/block6", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+
+
+router.get("/cinema4/block1", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema4/block2", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema4/block3", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema4/block4", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema4/block5", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
+router.get("/cinema4/block6", (req, res)=>{
+    if(req.session.user){
+        res.render("cinemaSeatViews", {title: "Select Seat"});
+    }else{
+        res.sendStatus(403);
+    }
+});
+
 
 router.get("/logout", (req, res)=>{
     req.session.destroy(function(err){
