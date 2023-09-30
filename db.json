@@ -65,12 +65,7 @@
       "name": "Admin Francis",
       "email": "francis@test.com",
       "password": "12345678"
-    },
-    {
-      "id": "aa9d9641-9d1f-4667-8753-01d569aee846",
-      "name": "wilmar test",
-      "email": "wilmartest@test.com",
-      "password": "12345678"
+
     }
   ]
 }
